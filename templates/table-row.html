@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database</title>
+    <link rel="stylesheet" type="text/css" href="static/my-theme.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+<h1>Table Rows</h1>
+
+<h3>Add Rows:</h3>
+{% if form1 %}
+  {{ form1 | safe }}
+{% else %}
+  No form ....
+{% endif %}
+
+<h3>Row List:</h3>
+
+{% if row_list %}
+  {{ row_list | safe }}
+{% else %}
+  No Rows
+{% endif %}
+
+
+</body>
+</html>

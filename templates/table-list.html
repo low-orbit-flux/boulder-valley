@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database</title>
+    <link rel="stylesheet" type="text/css" href="static/my-theme.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+<h1>Tables</h1>
+
+<h3>Create New Table:</h3>
+<form action="/table-list" method="post">
+    <input type="hidden" name="action" value="create">
+    <input type="hidden" name="dbname" value="{{ db_name | safe }}">
+    Name: <input type="text" name="table-name">
+    Fields: <input type="text" name="table-fields">
+    <input type="image" src="static/new.png" alt="Submit">
+</form>
+
+<h3>Table List:</h3>
+
+{% if table_list %}
+  {{ table_list | safe }}
+{% else %}
+  No Tables
+{% endif %}
+
+
+</body>
+</html>
